@@ -15,7 +15,7 @@ navbar = dbc.NavbarSimple(
     dark=True,
     children=[
         dbc.NavItem(dbc.NavLink("Start", href="/")),
-        dbc.NavItem(dbc.NavLink("Brettspiel", href="/spiel")),
+        dbc.NavItem(dbc.NavLink("Spiel", href="/spiel")),
         dbc.NavItem(dbc.NavLink("Wien-Reise", href="/wien")),
     ]
 )
@@ -24,7 +24,8 @@ navbar = dbc.NavbarSimple(
 def layout_startseite():
     return dbc.Container([
         html.H1("Alles Gute zum 50. Geburtstag 🎉"),
-        html.P("Du hast zwar schon so viel erreicht aber dennoch wünschen wir dir auch in den nächsten Jahren viel Glück, Erfolg und vor allem Spaß. Auf das du noch lange gesund bleibst und weitere Abenteuer mit uns erleben kannst "),
+        html.P(["Du hast zwar schon so viel erreicht aber dennoch wünschen wir dir auch in den nächsten Jahren viel ", 
+                html.B("Glück"),",", html.B("Erfolg"),",", "und vor allem ", html.B("Spaß"), ". Auf das du noch lange gesund bleibst und weitere Abenteuer mit uns erleben kannst"]),
         html.Br(),
         html.P("Vielen Dank für alles was du uns ermöglichst, wir sind sehr dankbar und stolz auf dich! ♥️ "),
         html.Img(src="/assets/Fam1.jpg", style={"width": "50%"})
@@ -32,19 +33,33 @@ def layout_startseite():
 
 def layout_spiel():
     return dbc.Container([
-        html.H2("🎲 Damit du schonmal in Stimmung für unsere Reise kommst, haben wir einen klassischen Spieleabend für dich vorbereitet!"),
+        html.H2(["🎲 Damit du schonmal in Stimmung für unsere Reise kommst, haben wir einen klassischen" , html.B("Spieleabend"), "für dich vorbereitet!"]),
         html.P("Am Sontag nach dem Essen brauchen wir dein schlaues Köpfchen, um herauszufinden was mit Emilia Horvath in Wien passiert ist"),
         html.A("unser Spiel: Soko Unvergessen", href="https://www.storiesbyxenia.at/wien-spielt"),
+        html.Br(),
         html.Div([
             html.Img(src='/assets/spiel1.jpg', style={"width": "50%"}),
             html.Img(src='/assets/spiel2.jpg', style={"width": "50%"})
             ], style={"display": "flex", "flex-direction": "row", "justify-content": "center"})
     ], className="mt-4")
 
+# Do 25.09 - 27.09
+
 def layout_wien():
     return dbc.Container([
         html.H2("🌆 Eine Reise nach Wien"),
-        html.P("Hier findest du bald die Highlights deiner Reise! etc..."),
+        html.Img(src="/assets/wien1.jpg", style={"width": "50%"}),
+        html.P("Wir würden am Donnerstag den 25.09 nach Wien runter fahren"),
+        html.P(["Am Abend gehts dann ins Raimund Theater zu", html.B("Phantom der Oper")]),
+        html.Img(src="/assets/wien2.jpg", style={"width": "50%"}),
+        html.Br(),
+        html.P(["dann am Freitag steht eine tolle ", html.B("Weintour"), "samt Verpflegung durch die schönen Ecken Wiens auf dem Plan. Am Abend gehen wir dann noch lecker essen 😋"]),
+        html.Div([
+            html.Img(src='/assets/weintour1.jpg', style={"width": "50%"}),
+            html.Img(src='/assets/weintour2.jpg', style={"width": "50%"})
+            ], style={"display": "flex", "flex-direction": "row", "justify-content": "center"}),
+        html.P(["damit dir die ganze Reise auch gut tut, haben wir für Samstag noch eine tolle Route zum ", html.B("Laufen"), "rausgesucht"])
+
     ], className="mt-4")
 
 # App Layout mit Seitenlogik
