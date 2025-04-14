@@ -39,7 +39,7 @@ def layout_spiel():
 def layout_wien():
     return dbc.Container([
         html.H2("🌆 Eine Reise nach Wien"),
-        html.P("Hier findest du bald die Highlights deiner Reise!"),
+        html.P("Hier findest du bald die Highlights deiner Reise! etc..."),
     ], className="mt-4")
 
 # App Layout mit Seitenlogik
