@@ -5,7 +5,7 @@ import dash_bootstrap_components as dbc
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.title = "Alles Gute Papa"
-server = app.server  # für Deployment später nötig
+server = app.server  
 
 # Navigation (Navbar oben)
 navbar = dbc.NavbarSimple(
@@ -24,16 +24,19 @@ navbar = dbc.NavbarSimple(
 def layout_startseite():
     return dbc.Container([
         html.H1("Alles Gute zum 50. Geburtstag 🎉"),
-        html.P("Wir wünschen dir auch in den nächsten Jahren viel Glück, Gesundheit und Spaß. etc. ..."),
+        html.P("Du hast zwar schon so viel erreicht aber dennoch wünschen wir dir auch in den nächsten Jahren viel Glück, Erfolg und vor allem Spaß. Auf das du noch lange gesund bleibst und weitere Abenteuer mit uns erleben kannst "),
         html.Br(),
-        html.P("Vielen Dank für alles etc.  ...")
+        html.P("Vielen Dank für alles was du uns ermöglichst, wir sind sehr dankbar und stolz auf dich! ♥️ "),
+        html.Img(src="/assets/Fam1.jpg")
     ], className="mt-4")
 
 def layout_spiel():
     return dbc.Container([
-        html.H2("🎲 Dein neues Spiel"),
-        html.P("Spieleabend am Sonntag etc. ..."),
-        html.Img(src='/assets/test.jpg')# style={"width": "50%"})
+        html.H2("🎲 Damit du schonmal in Stimmung für unsere Reise kommst, haben wir einen klassischen Spieleabend für dich vorbereitet!"),
+        html.P("Am Sontag nach dem Essen brauchen wir dein schlaues Köpfchen, um herauszufinden was mit Emilia Horvath in Wien passiert ist"),
+        html.A("unser Spiel: Soko Unvergessen", href="https://www.storiesbyxenia.at/wien-spielt"),
+        html.Img(src='/assets/spiel1.jpg'),# style={"width": "50%"})
+        html.Img(src='/assets/spiel2.jpg')
     ], className="mt-4")
 
 def layout_wien():
