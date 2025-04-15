@@ -48,18 +48,30 @@ def layout_spiel():
 def layout_wien():
     return dbc.Container([
         html.H2("🌆 Eine Reise nach Wien"),
+        html.P("Wir werden am Donnerstag den 25.09 nach Wien runter fahren"),
         html.Img(src="/assets/wien1.jpg", style={"width": "50%"}),
         html.Br(),
-        html.P("Wir werden am Donnerstag den 25.09 nach Wien runter fahren"),
+
+        html.P(["wir verbringen unsere Nächte in einem schönen ", html.B("3-Schlafzimmer AirBnB"), " mitten in Wien."]),
+        html.Div([
+            html.Img(src='/assets/airbnb1.jpg', style={"width": "50%"}),
+            html.Img(src='/assets/airbnb2.jpg', style={"width": "50%"})
+            ], style={"display": "flex", "flex-direction": "row", "justify-content": "center"}),
+        html.Br(),
+
         html.P(["Am Abend gehts dann ins Raimund Theater zu ", html.B("Phantom der Oper")]),
         html.Img(src="/assets/wien2.jpg", style={"width": "50%"}),
         html.Br(),
+
         html.P(["dann am Freitag steht eine tolle ", html.B("Weintour"), ", samt Verpflegung, durch die schönen Ecken Wiens auf dem Plan. Am Abend gehen wir dann noch lecker essen 😋"]),
         html.Div([
             html.Img(src='/assets/weintour1.jpg', style={"width": "50%"}),
             html.Img(src='/assets/weintour2.jpg', style={"width": "50%"})
             ], style={"display": "flex", "flex-direction": "row", "justify-content": "center"}),
-        html.P(["damit dir die ganze Reise auch gut tut, haben wir für Samstag noch eine tolle Route zum ", html.B("Laufen"), " rausgesucht"])
+        html.Br(),
+
+        html.P(["damit dir die ganze Reise auch gut tut, haben wir für Samstag noch eine tolle Route zum ", html.B("Laufen"), " rausgesucht"]),
+        html.Img(src="/assets/wien3.jpg", style={"width": "50%"})
 
     ], className="mt-4")
 
