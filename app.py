@@ -17,6 +17,7 @@ navbar = dbc.NavbarSimple(
         dbc.NavItem(dbc.NavLink("Start", href="/")),
         dbc.NavItem(dbc.NavLink("Spiel", href="/spiel")),
         dbc.NavItem(dbc.NavLink("Wien-Reise", href="/wien")),
+        dbc.NavItem(dbc.NavLink("???", href="/supr"))
     ]
 )
 
@@ -78,6 +79,12 @@ def layout_wien():
 
     ], className="mt-4")
 
+def layout_supr():
+    return dbc.Container([
+        html.P("test")
+
+    ], class_name="mt-4")
+
 app.layout = html.Div([
     dcc.Location(id="url", refresh=False),
     navbar,
@@ -93,6 +100,8 @@ def display_page(pathname):
         return layout_spiel()
     elif pathname == "/wien":
         return layout_wien()
+    elif pathname == "/supr":
+        return layout_supr()
     else:
         return layout_startseite()
 
