@@ -36,7 +36,7 @@ def layout_spiel():
         html.H2(["🎲 Damit du schonmal in Stimmung für unsere Reise kommst, haben wir einen klassischen " , html.B("Spieleabend"), " für dich vorbereitet!"]),
         html.P("Am Sontag nach dem Essen brauchen wir dein schlaues Köpfchen, um herauszufinden was mit Emilia Horvath in Wien passiert ist"),
         html.A("unser Spiel: Soko Unvergessen", href="https://www.storiesbyxenia.at/wien-spielt"),
-        html.Br(),
+        html.Div(style={"height": "30px"}),
         html.Div([
             html.Img(src='/assets/spiel1.jpg', style={"width": "50%"}),
             html.Img(src='/assets/spiel2.jpg', style={"width": "50%"})
@@ -71,18 +71,19 @@ def layout_wien():
     
         html.Div(style={"height": "30px"}),
         html.P(["damit dir die ganze Reise auch gut tut, haben wir für Samstag noch eine tolle Route zum ", html.B("Laufen"), " rausgesucht"]),
-        html.Img(src="/assets/wien3.jpg", style={"width": "50%"})
+        html.Img(src="/assets/wien3.jpg", style={"width": "50%"}),
+
+        html.Div(style={"height": "30px"}),
+        html.P("am Samstag gegen Abend gehts dann wieder nach Hause 🏠")
 
     ], className="mt-4")
 
-# App Layout mit Seitenlogik
 app.layout = html.Div([
     dcc.Location(id="url", refresh=False),
     navbar,
     html.Div(id="page-content")
 ])
 
-# Callback zur Seitenanzeige
 @app.callback(
     dash.Output("page-content", "children"),
     dash.Input("url", "pathname")
