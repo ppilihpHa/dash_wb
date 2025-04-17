@@ -117,7 +117,7 @@ def show_video(n_clicks, pw):
             #AeCbWxkLUoE - Yt-ID
             src="https://www.youtube.com/embed/AeCbWxkLUoE?rel=0&modestbranding=1&controls=1",
             style={"width": "100%", "height": "500px", "border": "none"},
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen",
+            #allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen",
             allowFullScreen=True
         )
     elif n_clicks > 0 and pw != password:
