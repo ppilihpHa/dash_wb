@@ -107,7 +107,7 @@ app.layout = html.Div([
         dash.State("pwinput", "value")
 )
 def show_video(n_clicks, pw):
-    if True:#n_clicks > 0 and pw == password:
+    if n_clicks > 0 and pw == password:
         # return html.Video(
         #     src="/assets/vidLeni.mp4",
         #     controls=True,
@@ -116,9 +116,8 @@ def show_video(n_clicks, pw):
         return html.Iframe(
             #AeCbWxkLUoE - Yt-ID
             src="https://www.youtube.com/embed/AeCbWxkLUoE?rel=0&modestbranding=1&controls=1",
-            style={"width": "100%", "height": "315px", "border": "none"},
-            #allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen",
-            #allowFullScreen=True
+            style={"width": "100%", "height": "500px", "border": "none"},
+            allow="fullscreen"
         )
     elif n_clicks > 0 and pw != password:
         return html.Div("❌ Falsch ❌", style={"color" : "red"})
