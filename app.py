@@ -107,7 +107,7 @@ app.layout = html.Div([
         dash.State("pwinput", "value")
 )
 def show_video(n_clicks, pw):
-    if n_clicks > 0 and pw == password:
+    if True:#n_clicks > 0 and pw == password:
         # return html.Video(
         #     src="/assets/vidLeni.mp4",
         #     controls=True,
@@ -120,8 +120,8 @@ def show_video(n_clicks, pw):
             #allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen",
             allowFullScreen=True
         )
-    else: # n_clicks > 0 and pw != password:
-        return html.Div("test") #html.Div("❌ Falsch ❌", style={"color" : "red"})
+    elif n_clicks > 0 and pw != password:
+        return html.Div("❌ Falsch ❌", style={"color" : "red"})
     return ""
 
 
