@@ -120,8 +120,8 @@ def show_video(n_clicks, pw):
             #allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen",
             allowFullScreen=True
         )
-    elif n_clicks > 0 and pw != password:
-        return html.Div("❌ Falsch ❌", style={"color" : "red"})
+    else: # n_clicks > 0 and pw != password:
+        return html.Div("test") #html.Div("❌ Falsch ❌", style={"color" : "red"})
     return ""
 
 
