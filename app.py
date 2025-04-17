@@ -41,7 +41,7 @@ def layout_spiel():
         html.Div(style={"height": "30px"}),
         html.Div([
             html.Img(src='/assets/spiel1.jpg', style={"width": "50%"}),
-            html.Img(src='/assets/spiel2.jpg', style={"width": "50%"})
+            html.Img(src='/assets/spiel4.jpg', style={"width": "50%"})
             ], style={"display": "flex", "flex-direction": "row", "justify-content": "center"})
     ], className="mt-4")
 
