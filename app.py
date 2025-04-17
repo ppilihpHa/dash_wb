@@ -6,6 +6,7 @@ import dash_bootstrap_components as dbc
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.title = "Alles Gute Papa"
 server = app.server  
+password = "PapaDuBistDerBeste"
 
 # Navigation (Navbar oben)
 navbar = dbc.NavbarSimple(
@@ -81,7 +82,15 @@ def layout_wien():
 
 def layout_supr():
     return dbc.Container([
-        html.P("test")
+        html.H2("Hier musst du dich noch etwas gedulden 🎁"),
+        dcc.Input(
+            id="pwinput",
+            type="password",
+            placeholder="Bitte Passwort eingeben...",
+            style={"margin": "20px", "width" : "300px"}
+        ),
+        html.Button("Freischalten", id="button", n_clicks=0),
+        html.Div(id="vid")
 
     ], class_name="mt-4")
 
@@ -90,6 +99,24 @@ app.layout = html.Div([
     navbar,
     html.Div(id="page-content")
 ])
+
+
+@app.callback(
+        dash.Output("vid", "children"),
+        dash.Input("button", "n_clicks"),
+        dash.State("pwinput", "value")
+)
+def show_video(n_clicks, pw):
+    if n_clicks > 0 and pw == password:
+        return html.Video(
+            src="/assets/vidLeni.mp4",
+            controls=True,
+            style={"width": "100%", "max-width": "800px", "margin": "auto", "display": "block"}
+        )
+    elif n_clicks < 0:
+        return html.Div("❌ Falsch ❌", style={"color" : "red"})
+    return ""
+
 
 @app.callback(
     dash.Output("page-content", "children"),
