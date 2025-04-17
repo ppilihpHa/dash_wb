@@ -115,7 +115,7 @@ def show_video(n_clicks, pw):
         # )
         return html.Iframe(
             #AeCbWxkLUoE - Yt-ID
-            src="https://www.youtube.com/embed/AeCbWxkLUoE?rel=0&modestbranding=1&controls=1",
+            src="https://www.youtube.com/embed/AeCbWxkLUoE?rel=0&modestbranding=1&controls=1&loop=1",
             style={"width": "100%", "height": "500px", "border": "none"},
             allow="fullscreen"
         )
