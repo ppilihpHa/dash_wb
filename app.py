@@ -28,7 +28,7 @@ def layout_startseite():
     return dbc.Container([
         html.H1("Alles Gute zum 50. Geburtstag 🎉"),
         html.P(["Du hast zwar schon so viel erreicht aber dennoch wünschen wir dir auch in den nächsten Jahren viel ", 
-                html.B("Glück"),", ", html.B("Erfolg"),", ", "und vor allem ", html.B("Spaß"), ". Auf das du noch lange gesund bleibst und weitere Abenteuer mit uns erleben kannst"]),
+                html.B("Glück"),", ", html.B("Erfolg"),", ", "und vor allem ", html.B("Spaß"), ". Auf dass du noch lange gesund bleibst und weitere Abenteuer mit uns erleben kannst"]),
         html.Br(),
         html.P("Vielen Dank für alles was du uns ermöglichst, wir sind sehr dankbar und stolz auf dich! ♥️ "),
         html.Img(src="/assets/Fam1.jpg", style={"width": "50%"})
@@ -114,12 +114,16 @@ def show_video(n_clicks, pw):
         #     controls=True,
         #     style={"width": "100%", "max-width": "800px", "margin": "auto", "display": "block"}
         # )
-        return html.Iframe(
+        return html.Div([
+            html.Div(style={"height": "30px"}),
+            html.P("Wirklich schön dass es dich gibt ♥️"),
+            html.Div(style={"height": "30px"}),
+            html.Iframe(
             #qf_YLZ9Z2oE - Yt-ID
             src="https://www.youtube.com/embed/qf_YLZ9Z2oE?rel=0&modestbranding=1&controls=1&loop=1",
             style={"width": "100%", "height": "500px", "border": "none"},
             allow="fullscreen"
-        )
+        )])
     elif n_clicks > 0 and pw != password:
         return html.Div("❌ Falsch ❌", style={"color" : "red"})
     return ""
